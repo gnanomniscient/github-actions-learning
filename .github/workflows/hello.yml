@@ -1,18 +1,29 @@
-name: Test Workflow
+name: Dependency Demo
 
 on:
   push:
 
 jobs:
+
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Build Step
+        run: echo "Building Application"
 
-      - name: Print User
-        run: whoami
+  test:
+    needs: build
+    runs-on: ubuntu-latest
 
-      - name: Print Directory
-        run: pwd
+    steps:
+      - name: Test Step
+        run: echo "Running Tests"
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy Step
+        run: echo "Deploying Application"
