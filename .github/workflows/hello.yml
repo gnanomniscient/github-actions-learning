@@ -8,5 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Message
-        run: echo "Hello Ram"
+      - name: Linux Commands
+        run: |
+          pwd
+          whoami
+          ls -ltr
