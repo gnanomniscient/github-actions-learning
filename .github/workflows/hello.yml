@@ -11,8 +11,5 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Linux Commands
-        run: |
-          pwd
-          whoami
-          ls -ltr
+      - name: Show Files
+        run: ls -ltr
